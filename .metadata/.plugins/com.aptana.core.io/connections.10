@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections>
+<connection id="45d81d23-fcd0-4369-a390-ee0f783ab2a6" type="sftp">
+<name>njit</name>
+<host>afs7.njit.edu</host>
+<path>public_html/</path>
+<login>bn44</login>
+<compression>AUTO</compression>
+</connection>
+</connections>

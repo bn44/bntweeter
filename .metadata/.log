@@ -1,0 +1,78 @@
+!SESSION 2013-04-03 21:40:21.482 -----------------------------------------------
+eclipse.buildId=3.3.2.201302081546
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.equinox.security 1 0 2013-04-03 22:56:56.253
+!MESSAGE New keyring password generated. 
+
+!ENTRY com.aptana.scripting 4 0 2013-04-03 22:58:21.862
+!MESSAGE (Build 3.3.2.201302081546) [ERROR]  Resource '/twt' is not open.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/twt' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:150)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:266)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:249)
+	at com.aptana.scripting.model.BundleMonitor.handleProjectDeleteEvent(BundleMonitor.java:640)
+	at com.aptana.scripting.model.BundleMonitor.resourceChanged(BundleMonitor.java:595)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:261)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:390)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1994)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:765)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:132)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2013-04-03 22:58:21.864
+!MESSAGE Resource '/twt' is not open.
+
+!ENTRY com.aptana.syncing.core 4 0 2013-04-03 23:00:51.872
+!MESSAGE (Build 3.3.2.201302081546) [ERROR]  Opening file failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: Opening file failed
+	at com.aptana.filesystem.secureftp.internal.SFTPConnectionFileManager.writeFile(SFTPConnectionFileManager.java:1156)
+	at com.aptana.core.io.vfs.BaseConnectionFileManager.openOutputStream(BaseConnectionFileManager.java:333)
+	at com.aptana.core.io.efs.VirtualFile.openOutputStream(VirtualFile.java:143)
+	at com.aptana.core.io.efs.SyncUtils.copy(SyncUtils.java:93)
+	at com.aptana.ide.syncing.core.old.Synchronizer.uploadAndDelete(Synchronizer.java:1395)
+	at com.aptana.ide.syncing.core.old.Synchronizer.upload(Synchronizer.java:1299)
+	at com.aptana.ide.syncing.ui.actions.UploadAction$1.run(UploadAction.java:128)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: com.enterprisedt.net.ftp.FTPException: 2 No such file
+	at com.enterprisedt.net.j2ssh.sftp.SftpSubsystemClient.a(SftpSubsystemClient.java:1103)
+	at com.enterprisedt.net.j2ssh.sftp.SftpSubsystemClient.openFile(SftpSubsystemClient.java:607)
+	at com.enterprisedt.net.j2ssh.SftpClient.getOutputStream(SftpClient.java:1047)
+	at com.enterprisedt.net.ftp.ssh.SSHFTPOutputStream.<init>(SSHFTPOutputStream.java:141)
+	at com.enterprisedt.net.ftp.ssh.SSHFTPOutputStream.<init>(SSHFTPOutputStream.java:120)
+	at com.aptana.filesystem.secureftp.internal.SFTPConnectionFileManager.writeFile(SFTPConnectionFileManager.java:1137)
+	... 7 more
+!SUBENTRY 1 com.aptana.filesystem.secureftp 4 0 2013-04-03 23:00:51.872
+!MESSAGE Opening file failed
+!STACK 0
+com.enterprisedt.net.ftp.FTPException: 2 No such file
+	at com.enterprisedt.net.j2ssh.sftp.SftpSubsystemClient.a(SftpSubsystemClient.java:1103)
+	at com.enterprisedt.net.j2ssh.sftp.SftpSubsystemClient.openFile(SftpSubsystemClient.java:607)
+	at com.enterprisedt.net.j2ssh.SftpClient.getOutputStream(SftpClient.java:1047)
+	at com.enterprisedt.net.ftp.ssh.SSHFTPOutputStream.<init>(SSHFTPOutputStream.java:141)
+	at com.enterprisedt.net.ftp.ssh.SSHFTPOutputStream.<init>(SSHFTPOutputStream.java:120)
+	at com.aptana.filesystem.secureftp.internal.SFTPConnectionFileManager.writeFile(SFTPConnectionFileManager.java:1137)
+	at com.aptana.core.io.vfs.BaseConnectionFileManager.openOutputStream(BaseConnectionFileManager.java:333)
+	at com.aptana.core.io.efs.VirtualFile.openOutputStream(VirtualFile.java:143)
+	at com.aptana.core.io.efs.SyncUtils.copy(SyncUtils.java:93)
+	at com.aptana.ide.syncing.core.old.Synchronizer.uploadAndDelete(Synchronizer.java:1395)
+	at com.aptana.ide.syncing.core.old.Synchronizer.upload(Synchronizer.java:1299)
+	at com.aptana.ide.syncing.ui.actions.UploadAction$1.run(UploadAction.java:128)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
